@@ -1,4 +1,4 @@
-# Aplicativo de administração de uma loja com vue  (stockup)
+# Aplicativo de administração de uma loja com Vue.js, Quasar Framework e Supabase (stockup)
 
 A Quasar Project
 

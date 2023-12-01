@@ -48,7 +48,7 @@
 </q-form>
 
 <div class="bg-primary text-white text-right card">
-    <h5>Bem vindo ao StockUp,<br>É otimo termos você em nossa equipe </h5>
+    <h5>Bem vindo ao StockUp,<br>É otimo termos você em <br class="mob"> nossa equipe </h5>
     <img src="../../public/create.png " class="l-img">
 </div>
 

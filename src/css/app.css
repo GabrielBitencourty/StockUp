@@ -46,6 +46,9 @@
     transition: .3s;
 }
 
+.mob{
+    display: none;
+}
 
 .card-email{
     padding: 2rem 3rem;
@@ -66,35 +69,29 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 90px;
 }
-
+.back{
+    display: none;
+}
 @media screen and (max-width: 450px) {
     .card{
         display: none;
     }
     .card-login{
-      position: relative;
-      left: 0;
-      margin: 1rem;
-      border: none;
-      width: 100%;  
+        width: 100%;
+        margin: 1rem;
+        position: static;
     }
     .card-login2{
-      position: relative;
-      left: 0;
-      margin: 1rem;
-      border: none;
-      width: 100%;  
-    }    
-}
-
-@media screen and (max-width: 850px) {
-    .card{
-        display: none;
+        width: 100%;
+        margin: 1rem;
+        position: static;
     }
-    .card-login{
-        width: 70%;
-    }   
-    .card-login2{
-        width: 70%;
+    .forgot{
+        width: 90%;
+        margin: 1rem;
+        position: static;
+    }
+    .back{
+        display: flex;
     }
 }

@@ -37,6 +37,15 @@
                 no-caps
               />
           </div>
+          <div class="q-pt-md">
+            <q-btn
+                label="Voltar"
+                no-caps
+                rounded
+                class="full-width back"
+                to="/login"
+              />
+          </div>
 
         </div>
       </q-form>

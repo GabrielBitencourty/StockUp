@@ -3,7 +3,7 @@
    <q-page class="flex flex-center q-row">
 
     <div class="bg-primary text-white card">
-      <h4>Olá, seja bem vindo de volta</h4>
+      <h4>Olá, seja bem vindo <br class="mob"> de volta</h4>
       <img src="../../public/login.png" class="l-img" alt="Background da login page">
     </div>
 

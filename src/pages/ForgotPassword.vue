@@ -10,6 +10,7 @@
               class="bg-white text-primary"
               rounded
               to="/login"
+              no-caps
             />
         </div>
 
@@ -35,6 +36,14 @@
                   rounded
                   type="submit"
                   no-caps
+                />
+            </div>
+            <div class="q-pt-md">
+              <q-btn
+                  label="Voltar"
+                  class="bg-white text-primary back"
+                  rounded
+                  to="/login"
                 />
             </div>
 

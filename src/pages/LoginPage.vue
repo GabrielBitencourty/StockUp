@@ -39,9 +39,13 @@
         </q-input>
 
         <div class="q-pt-md full-width text-right">
-          <a href="/forgot-password" class="text-primary d-none">
-            Esqueceu a senha?
-          </a>
+          <q-btn
+            label="Esqueceu a senha?"
+            color="primary"
+            flat
+            no-caps
+            to="/forgot-password"
+          />
         </div>
 
         <div class="full-width q-pt-md">

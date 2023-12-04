@@ -42,6 +42,7 @@
           <q-btn
             label="Esqueceu a senha?"
             color="primary"
+            rounded
             flat
             no-caps
             to="/forgot-password"

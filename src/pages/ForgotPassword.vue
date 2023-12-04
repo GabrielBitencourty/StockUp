@@ -45,6 +45,7 @@
                   label="Voltar"
                   class="bg-white text-primary back"
                   rounded
+                  no-caps
                   to="/login"
                 />
             </div>

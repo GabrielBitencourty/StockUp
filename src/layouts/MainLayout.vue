@@ -60,6 +60,7 @@ import EssentialLink from 'components/EssentialLink.vue'
 import useAuth from 'src/composables/useAuth'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
+import useNotify from 'src/composables/useNotify'
 
 const linksList = [
   {
@@ -116,6 +117,8 @@ export default defineComponent({
 
     const $q = useQuasar()
 
+    const { notifyInfo } = useNotify()
+
     const router = useRouter()
 
     const { logout } = useAuth()
@@ -128,6 +131,7 @@ export default defineComponent({
         cancel: true
       }).onOk(async () => {
         await logout()
+        notifyInfo()
         router.replace({ name: 'login' })
       })
     }

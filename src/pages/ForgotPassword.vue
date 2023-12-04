@@ -22,6 +22,8 @@
               color="primary"
               label="Email"
               v-model="email"
+              lazy-rules
+              :rules="[val => (val && val.length > 0) || 'Digite o email da sua conta']"
               >
               <template v-slot:prepend>
                 <q-icon name="email" color="primary"/>
@@ -56,6 +58,7 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import useAuth from 'src/composables/useAuth'
+import useNotify from 'src/composables/useNotify'
 
 export default defineComponent({
 
@@ -64,12 +67,14 @@ export default defineComponent({
 
     const email = ref('')
 
+    const { notifySuccess, notifyError } = useNotify()
+
     const handlePasswordReset = async () => {
       try {
         await sendPasswordRestEmail(email.value)
-        alert(`Um email foi enviado para ${email.value}`)
+        notifySuccess('Email enviado com suceso!')
       } catch (error) {
-        console.log('Erro ao enviar o Email', error.message)
+        notifyError(error.message)
       }
     }
 

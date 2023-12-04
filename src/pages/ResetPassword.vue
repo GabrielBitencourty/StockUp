@@ -21,6 +21,8 @@
             color="primary"
             label="Nova Senha"
             v-model="password"
+            lazy-rules
+            :rules="[val => (val && val.length > 6) || 'Digite uma senha valida']"
             >
             <template v-slot:prepend>
               <q-icon name="lock" color="primary"/>
@@ -57,6 +59,7 @@
 import { defineComponent, ref } from 'vue'
 import useAuth from 'src/composables/useAuth'
 import { useRouter, useRoute } from 'vue-router'
+import useNotify from 'src/composables/useNotify'
 
 export default defineComponent({
   name: 'PageResetPassword',
@@ -68,8 +71,11 @@ export default defineComponent({
 
     const password = ref('')
 
+    const { notifySuccess } = useNotify()
+
     const handlePasswordReset = async () => {
       await resetPassword(token, password.value)
+      notifySuccess('Nova senha salva com sucesso')
       router.push({ name: 'login' })
     }
 

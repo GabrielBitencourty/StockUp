@@ -12,13 +12,27 @@
 
         <p class="col-12 text-h5 text-center">Faça seu login agora!</p>
 
-        <q-input color="primary" label="Email" v-model="form.email">
+        <q-input
+          ref="nameRef"
+          color="primary"
+          label="Email"
+          v-model="form.email"
+          lazy-rules
+          :rules="[val => (val && val.length > 0) || 'Digite um email valido']"
+        >
           <template v-slot:prepend>
             <q-icon name="email" color="primary"/>
            </template>
         </q-input>
 
-        <q-input color="primary" label="Password"  v-model="form.password">
+        <q-input
+          ref="passwordRef"
+          color="primary"
+          label="Password"
+          v-model="form.password"
+          lazy-rules
+          :rules="[val => (val && val.length > 6) || 'Digite sua senha']"
+        >
           <template v-slot:prepend>
             <q-icon name="lock" color="primary"/>
            </template>
@@ -57,27 +71,37 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
 import useAuth from 'src/composables/useAuth'
 import { useRouter } from 'vue-router'
+import useNotify from 'src/composables/useNotify'
 
 export default defineComponent({
   name: 'PageLogin',
 
   setup () {
     const router = useRouter()
-    const { login } = useAuth()
+    const { login, isLoggedIn } = useAuth()
     const form = ref({
       email: '',
       password: ''
     })
 
+    onMounted(() => {
+      if (isLoggedIn) {
+        router.push({ name: 'user-page' })
+      }
+    })
+
+    const { notifyError, notifySuccess } = useNotify()
+
     const handleLogin = async () => {
       try {
         await login(form.value)
+        notifySuccess('Logado com sucesso')
         router.replace({ name: 'user-page' })
       } catch (error) {
-        alert(error.message)
+        notifyError(error.message)
       }
     }
 

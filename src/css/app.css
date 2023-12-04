@@ -72,7 +72,7 @@
 .back{
     display: none;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
     .card{
         display: none;
     }

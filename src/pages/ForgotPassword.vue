@@ -3,7 +3,7 @@
   <q-page class="flex flex-center q-row">
     <div class="bg-primary text-white card">
             <h4>Verificação de acesso</h4>
-            <p>Para sua segurança enviaremos um email com as informações necéssarias <br> para resetar a sua senha.</p>
+            <p>Para sua segurança enviaremos um email com as informações <br class="mob"> necéssarias <br class="m2"> para resetar a sua senha.</p>
 
             <q-btn
               label="Voltar"

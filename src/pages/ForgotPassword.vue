@@ -23,7 +23,7 @@
               label="Email"
               v-model="email"
               lazy-rules
-              :rules="[val => (val && val.length > 0) || 'Digite o email da sua conta']"
+              :rules="[val => (val && val.length > 0) || 'Digite um email valido']"
               >
               <template v-slot:prepend>
                 <q-icon name="email" color="primary"/>

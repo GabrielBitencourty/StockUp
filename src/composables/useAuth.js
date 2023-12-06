@@ -37,7 +37,7 @@ export default function useAuth () {
   }
 
   const update = async (data) => {
-    const { user, error } = await supabase.auth.resetPasswordForEmail(data)
+    const { user, error } = await supabase.auth.updateUser(data)
     if (error) throw error
     return user
   }

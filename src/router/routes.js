@@ -15,7 +15,8 @@ const routes = [
     path: '/loggedIn',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: 'user-page', name: 'user-page', component: () => import('pages/UserPage.vue') }
+      { path: 'user-page', name: 'user-page', component: () => import('pages/UserPage.vue') },
+      { path: 'category', name: 'category', component: () => import('pages/category/ListPage.vue') }
     ],
     meta: {
       requiresAuth: true

@@ -8,7 +8,7 @@ export default function useNotify () {
       type: 'positive',
       message: message || 'All rigth!',
       position: 'top',
-      timeout: 1000
+      timeout: 2000
     })
   }
 
@@ -17,7 +17,7 @@ export default function useNotify () {
       type: 'negative',
       message: message || 'Failled!',
       position: 'top',
-      timeout: 1000
+      timeout: 2000
     })
   }
 

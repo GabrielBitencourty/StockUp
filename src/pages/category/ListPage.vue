@@ -1,11 +1,11 @@
 <template>
-  <q-page padding>
+  <q-page padding class="q-pt-xl">
     <div class="row">
       <q-table
        :rows="categories"
        :columns="columns"
        row-key="id"
-       class="col-12"
+       class="col-12 table"
        :loading="loading"
       >
 
@@ -20,6 +20,7 @@
             no-caps
             icon="mdi-plus"
             color="secondary"
+            :to="{ name: 'form-category' }"
           />
         </template>
 
@@ -48,6 +49,7 @@
 <script>
 const columns = [
   { name: 'name', align: 'left', label: 'Name', field: 'name', sortable: true },
+  { name: 'id', align: 'left', label: 'Id', field: 'id', sortable: true },
   { name: 'actions', align: 'right', label: 'Actions', field: 'actions', sortable: true }
 ]
 

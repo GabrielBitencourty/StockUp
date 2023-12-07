@@ -72,6 +72,13 @@
 .back{
     display: none;
 }
+.table{
+    border: 1px solid #ccc;
+}
+
+
+
+
 @media screen and (max-width: 600px) {
     .card{
         display: none;

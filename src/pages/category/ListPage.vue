@@ -27,15 +27,15 @@
         <template v-slot:body-cell-actions="props">
           <q-td :props="props" class="q-gutter-x-sm">
 
-            <q-btn icon="mdi-pencil-outline" color="info" dense size="sm">
+            <q-btn icon="mdi-pencil-outline" color="info" dense size="sm" @click="handleEdit(props.row)">
               <q-tooltip>
-                Edit
+                Editar
               </q-tooltip>
             </q-btn>
 
             <q-btn icon="mdi-delete-empty" color="negative" dense size="sm">
               <q-tooltip>
-                Delete
+                Excluir
               </q-tooltip>
             </q-btn>
 
@@ -56,6 +56,7 @@ const columns = [
 import { defineComponent, ref, onMounted } from 'vue'
 import useApi from 'src/composables/useApi'
 import useNotify from 'src/composables/useNotify'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'pageCategoryList',
@@ -66,6 +67,7 @@ export default defineComponent({
 
     const { list } = useApi()
     const { notifyError } = useNotify()
+    const router = useRouter()
 
     const handelListCategories = async () => {
       try {
@@ -77,6 +79,10 @@ export default defineComponent({
       }
     }
 
+    const handleEdit = (category) => {
+      router.push({ name: 'form-category', params: { id: category.id } })
+    }
+
     onMounted(() => {
       handelListCategories()
     })
@@ -84,7 +90,8 @@ export default defineComponent({
     return {
       columns,
       categories,
-      loading
+      loading,
+      handleEdit
     }
   }
 })

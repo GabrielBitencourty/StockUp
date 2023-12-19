@@ -1,15 +1,14 @@
 <template>
-  <q-page>
-    <div class="row q-pt-xl flex flex-center">
-      <div class="col-12 text-center">
-        <p class="text-h6">Adicionar nova Categoria</p>
-      </div>
+  <q-page padding class="flex flex-center">
 
+    <div class="container">
+      <h5>Adicionar uma nova categoria</h5>
       <q-form class="col-md-7 col-xs-12 col-sm-12" @submit.prevent="handleSubmit">
+
         <q-input
           label="Nome da Categoria"
-          v-model="form.name"
           lazy-rules
+          v-model="form.name"
           :rules="[val => (val && val.length > 0) || 'Digite um nome valido']"
         >
         <template v-slot:prepend>
@@ -18,27 +17,27 @@
         </q-input>
 
         <div class="flex flex-center q-pt-xl q-gutter-x-xl">
-            <q-btn
-              label="Salvar Categoria"
-              type="submit"
-              rounded
-              no-caps
-              color="primary"
-            />
+          <q-btn
+            label="Salvar Categoria"
+            type="submit"
+            rounded
+            no-caps
+            color="primary"
+          />
 
-            <q-btn
-              label="Cancelar"
-              rounded
-              no-caps
-              flat
-              class="bg-secondary text-white"
-              :to="{ name: 'category' }"
-            />
+          <q-btn
+            label="Cancelar"
+            rounded
+            no-caps
+            flat
+            class="bg-secondary text-white"
+            :to="{ name: 'category' }"
+          />
         </div>
 
       </q-form>
-
     </div>
+
   </q-page>
 </template>
 

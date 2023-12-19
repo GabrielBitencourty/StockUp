@@ -75,6 +75,12 @@
 .table{
     border: 1px solid #ccc;
 }
+.container{
+    border: 1px solid #ccc;
+    padding: 1rem 2rem;
+    width: 50vw;
+    box-shadow: 10px 12px 10px #868686;
+}
 
 
 

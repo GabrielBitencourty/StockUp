@@ -1,6 +1,6 @@
 <template>
   <q-page padding class="q-pt-xl">
-    <div class="row">
+    <div>
       <q-table
        :rows="categories"
        :columns="columns"
@@ -24,7 +24,7 @@
           />
         </template>
 
-        <template v-slot:body-cell-actions="props">
+        <template v-slot:body-cell-actions="props" >
           <q-td :props="props" class="q-gutter-x-sm">
 
             <q-btn icon="mdi-pencil-outline" color="info" dense size="sm" @click="handleEdit(props.row)">

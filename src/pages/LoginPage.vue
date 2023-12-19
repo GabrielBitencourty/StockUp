@@ -30,12 +30,21 @@
           color="primary"
           label="Password"
           v-model="form.password"
+          :type="isPwd ? 'password' : 'text'"
           lazy-rules
           :rules="[val => (val && val.length > 6) || 'Digite sua senha']"
         >
           <template v-slot:prepend>
             <q-icon name="lock" color="primary"/>
-           </template>
+          </template>
+
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+            />
+          </template>
         </q-input>
 
         <div class="q-pt-md full-width text-right">

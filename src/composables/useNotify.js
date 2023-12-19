@@ -23,10 +23,10 @@ export default function useNotify () {
 
   const notifyInfo = (message) => {
     $q.notify({
-      type: 'warning',
+      type: 'positive',
       icon: 'info',
       iconColor: 'white',
-      message: message || 'Logout efetuado com sucesso',
+      message: message || 'Você saiu da sua conta!',
       position: 'top',
       timeout: 2000
     })

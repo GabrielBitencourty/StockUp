@@ -32,15 +32,27 @@
     </q-input>
 
     <q-input
+      ref="passwordRef"
       color="primary"
+      id="q-app"
       label="Password"
       v-model="form.password"
       lazy-rules
+      :type="isPwd ? 'password' : 'text'"
       :rules="[val => (val && val.length > 6) || 'Digite uma senha']"
     >
       <template v-slot:prepend>
         <q-icon name="lock" color="primary"/>
-       </template>
+      </template>
+
+      <template v-slot:append>
+        <q-icon
+          :name="isPwd ? 'visibility_off' : 'visibility'"
+          class="cursor-pointer"
+          @click=" isPwd = !isPwd"
+        />
+      </template>
+
     </q-input>
     <div class="full-width q-pt-md">
       <q-btn
@@ -109,7 +121,16 @@ export default defineComponent({
 
     return {
       form,
-      handleRegister
+      handleRegister,
+
+      password: (''),
+      isPwd: ref(true),
+      email: ref(''),
+      search: ref(''),
+      tel: ref(''),
+      url: ref(''),
+      time: ref(''),
+      date: ref('')
     }
   }
 })

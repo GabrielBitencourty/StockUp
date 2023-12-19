@@ -29,6 +29,7 @@
           ref="passwordRef"
           color="primary"
           label="Password"
+          id="q-app"
           v-model="form.password"
           :type="isPwd ? 'password' : 'text'"
           lazy-rules
@@ -42,7 +43,7 @@
             <q-icon
               :name="isPwd ? 'visibility_off' : 'visibility'"
               class="cursor-pointer"
-              @click="isPwd = !isPwd"
+              @click=" isPwd = !isPwd"
             />
           </template>
         </q-input>
@@ -121,7 +122,16 @@ export default defineComponent({
 
     return {
       form,
-      handleLogin
+      handleLogin,
+
+      password: (''),
+      isPwd: ref(true),
+      email: ref(''),
+      search: ref(''),
+      tel: ref(''),
+      url: ref(''),
+      time: ref(''),
+      date: ref('')
     }
   }
 })

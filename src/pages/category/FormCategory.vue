@@ -32,7 +32,7 @@
               no-caps
               flat
               class="bg-secondary text-white"
-              :to="{ name: 'form-category' }"
+              :to="{ name: 'category' }"
             />
         </div>
 

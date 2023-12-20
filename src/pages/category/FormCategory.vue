@@ -3,8 +3,9 @@
 
     <div class="container">
       <q-form class="col-md-7 col-xs-12 col-sm-12" @submit.prevent="handleSubmit">
-
-        <h5>Adicionar uma nova categoria</h5>
+        <div>
+          <h5>Adicionar Nova Categoria</h5>
+        </div>
 
         <q-input
           label="Nome da Categoria"
@@ -20,7 +21,7 @@
 
         <div class="flex flex-center q-pt-xl q-gutter-x-xl">
           <q-btn
-            label="Salvar"
+            :label="isUpdate ? 'Salvar Alterações' : 'Salvar'"
             type="submit"
             rounded
             no-caps
@@ -56,7 +57,7 @@ export default defineComponent({
     const table = 'category'
     const router = useRouter()
     const route = useRoute()
-    const { post, getById } = useApi()
+    const { post, getById, update } = useApi()
     const { notifyError, notifySuccess } = useNotify()
 
     const isUpdate = computed(() => route.params.id)
@@ -74,8 +75,15 @@ export default defineComponent({
 
     const handleSubmit = async () => {
       try {
-        await post(table, form.value)
-        notifySuccess('Categoria salva com sucesso')
+        if (isUpdate.value) {
+          await update(table, {
+            ...form.value
+          })
+          notifySuccess('Alterações salvas com sucesso!')
+        } else {
+          await post(table, form.value)
+          notifySuccess('Categoria salva com sucesso')
+        }
         router.push({ name: 'category' })
       } catch (error) {
         notifyError(error.message)
@@ -93,7 +101,8 @@ export default defineComponent({
 
     return {
       handleSubmit,
-      form
+      form,
+      isUpdate
     }
   }
 })

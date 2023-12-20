@@ -2,8 +2,9 @@
   <q-page padding class="flex flex-center">
 
     <div class="container">
-      <h5>Adicionar uma nova categoria</h5>
       <q-form class="col-md-7 col-xs-12 col-sm-12" @submit.prevent="handleSubmit">
+
+        <h5>Adicionar uma nova categoria</h5>
 
         <q-input
           label="Nome da Categoria"
@@ -14,11 +15,12 @@
         <template v-slot:prepend>
           <q-icon name="mdi-book-plus-multiple" color="primary"/>
         </template>
+
         </q-input>
 
         <div class="flex flex-center q-pt-xl q-gutter-x-xl">
           <q-btn
-            label="Salvar Categoria"
+            label="Salvar"
             type="submit"
             rounded
             no-caps

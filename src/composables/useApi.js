@@ -49,7 +49,7 @@ export default function useApi () {
   const remove = async (table, id) => {
     const { data, error } = await supabase
       .from(table)
-      .delet()
+      .delete()
       .match({ id })
     if (error) throw error
     return data

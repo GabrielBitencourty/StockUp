@@ -33,7 +33,7 @@
               </q-tooltip>
             </q-btn>
 
-            <q-btn icon="mdi-delete-empty" color="negative" dense size="sm">
+            <q-btn icon="mdi-delete-empty" color="negative" dense size="sm" @click="handleRemove(props.row)">
               <q-tooltip>
                 Excluir
               </q-tooltip>
@@ -57,6 +57,7 @@ import { defineComponent, ref, onMounted } from 'vue'
 import useApi from 'src/composables/useApi'
 import useNotify from 'src/composables/useNotify'
 import { useRouter } from 'vue-router'
+import { useQuasar } from 'quasar'
 
 export default defineComponent({
   name: 'pageCategoryList',
@@ -64,15 +65,17 @@ export default defineComponent({
   setup () {
     const categories = ref([])
     const loading = ref(true)
+    const $q = useQuasar()
+    const table = 'category'
 
-    const { list } = useApi()
-    const { notifyError } = useNotify()
+    const { list, remove } = useApi()
+    const { notifyError, notifySuccess } = useNotify()
     const router = useRouter()
 
     const handelListCategories = async () => {
       try {
         loading.value = true
-        categories.value = await list('category')
+        categories.value = await list(table)
         loading.value = false
       } catch (error) {
         notifyError(error.message)
@@ -83,6 +86,23 @@ export default defineComponent({
       router.push({ name: 'form-category', params: { id: category.id } })
     }
 
+    const handleRemove = async (category) => {
+      try {
+        $q.dialog({
+          title: 'Antenção',
+          message: `Deseja excluir a categoria ${category.name}?`,
+          cancel: true,
+          persistent: true
+        }).onOk(async () => {
+          await remove(table, category.id)
+          notifySuccess('Categoria excluida com sucesso')
+          handelListCategories()
+        })
+      } catch (error) {
+        notifyError(error.message)
+      }
+    }
+
     onMounted(() => {
       handelListCategories()
     })
@@ -91,7 +111,8 @@ export default defineComponent({
       columns,
       categories,
       loading,
-      handleEdit
+      handleEdit,
+      handleRemove
     }
   }
 })

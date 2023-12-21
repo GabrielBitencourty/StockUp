@@ -108,4 +108,7 @@
     .back{
         display: flex;
     }
+    .container{
+        width: 100%;
+    }
 }

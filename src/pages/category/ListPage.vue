@@ -15,6 +15,7 @@
           </span>
           <q-space />
           <q-btn
+            v-if="$q.platform.is.desktop"
             label="Add new"
             rounded
             no-caps
@@ -43,6 +44,18 @@
         </template>
        </q-table>
     </div>
+    <q-page-sticky
+      position="bottom-right"
+      :offset="[18, 18]"
+    >
+      <q-btn
+        v-if="$q.platform.is.mobile"
+        fab
+        icon="add"
+        color="primary"
+        :to="{ name: 'form-category' }"
+      />
+  </q-page-sticky>
   </q-page>
 </template>
 

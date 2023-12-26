@@ -19,7 +19,7 @@ const routes = [
       { path: 'category', name: 'category', component: () => import('pages/category/ListPage.vue') },
       { path: 'form-category/:id?', name: 'form-category', component: () => import('pages/category/FormCategory.vue') },
       { path: 'product', name: 'product', component: () => import('pages/products/ListPage.vue') },
-      { path: 'form-product/:id?', name: 'form-product', component: () => import('pages/products/FormProducts.vue') }
+      { path: 'form-product/:id?', name: 'form-product', component: () => import('pages/products/formProducts.vue') }
     ],
     meta: {
       requiresAuth: true

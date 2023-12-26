@@ -2,8 +2,8 @@
   <q-page padding class="q-pt-xl">
     <div>
       <q-table
-       :rows="categories"
-       :columns="columnsCategory"
+       :rows="products"
+       :columns="columnsProducts"
        row-key="id"
        class="col-12 table"
        :loading="loading"
@@ -11,7 +11,7 @@
 
         <template v-slot:top>
           <span class="text-h6">
-            Categories
+            Products
           </span>
           <q-space />
           <q-btn
@@ -23,6 +23,14 @@
             color="secondary"
             :to="{ name: 'form-category' }"
           />
+        </template>
+
+        <template v-slot:body-cell-img_url="props">
+          <q-td :props="props">
+            <q-avatar>
+              <img :src="props.row.img_url">
+            </q-avatar>
+          </q-td>
         </template>
 
         <template v-slot:body-cell-actions="props" >
@@ -53,7 +61,7 @@
         fab
         icon="add"
         color="primary"
-        :to="{ name: 'form-category' }"
+        :to="{ name: 'form-product' }"
       />
   </q-page-sticky>
   </q-page>
@@ -65,25 +73,25 @@ import useApi from 'src/composables/useApi'
 import useNotify from 'src/composables/useNotify'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
-import { columnsCategory } from './table'
+import { columnsProducts } from './table'
 
 export default defineComponent({
-  name: 'pageCategoryList',
+  name: 'pageProductsList',
 
   setup () {
-    const categories = ref([])
+    const products = ref([])
     const loading = ref(true)
     const $q = useQuasar()
-    const table = 'category'
+    const table = 'products'
 
     const { list, remove } = useApi()
     const { notifyError, notifySuccess } = useNotify()
     const router = useRouter()
 
-    const handelListCategories = async () => {
+    const handleListProducts = async () => {
       try {
         loading.value = true
-        categories.value = await list(table)
+        products.value = await list(table)
         loading.value = false
       } catch (error) {
         notifyError(error.message)
@@ -91,7 +99,7 @@ export default defineComponent({
     }
 
     const handleEdit = (category) => {
-      router.push({ name: 'form-category', params: { id: category.id } })
+      router.push({ name: 'form-product', params: { id: category.id } })
     }
 
     const handleRemove = async (category) => {
@@ -104,7 +112,7 @@ export default defineComponent({
         }).onOk(async () => {
           await remove(table, category.id)
           notifySuccess('Categoria excluida com sucesso')
-          handelListCategories()
+          handleListProducts()
         })
       } catch (error) {
         notifyError(error.message)
@@ -112,12 +120,12 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      handelListCategories()
+      handleListProducts()
     })
 
     return {
-      columnsCategory,
-      categories,
+      columnsProducts,
+      products,
       loading,
       handleEdit,
       handleRemove

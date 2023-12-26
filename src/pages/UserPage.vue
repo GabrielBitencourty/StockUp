@@ -312,7 +312,7 @@
     </q-card>
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://images.pexels.com/photos/2059151/pexels-photo-2059151.jpeg?auto=compress&cs=tinysrgb&w=600" />
+      <q-img src="https://images.pexels.com/photos/1893566/pexels-photo-1893566.jpeg?auto=compress&cs=tinysrgb&w=600" />
 
       <q-card-section>
         <q-btn
@@ -325,7 +325,7 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Japan Ramen
+            Ice Cream
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
@@ -348,9 +348,9 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="add" />
         <q-btn flat color="primary">
-          Reserve
+          Add to cart
         </q-btn>
       </q-card-actions>
     </q-card>

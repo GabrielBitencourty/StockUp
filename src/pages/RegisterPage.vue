@@ -1,5 +1,5 @@
 <template>
- <img src="https://images.pexels.com/photos/772803/pexels-photo-772803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="bg" alt="Background">
+ <img src="https://images.pexels.com/photos/301391/pexels-photo-301391.jpeg?auto=compress&cs=tinysrgb&w=600" class="bg" alt="Background">
 <q-page class="flex flex-center q-row">
 
 <q-form class="row flex flex-center bg-white card-login2" @submit.prevent="handleRegister"  @reset.prevent.stop="onReset">

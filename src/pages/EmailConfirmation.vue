@@ -1,5 +1,5 @@
 <template>
-<img src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="bg" alt="Background">
+<img src="https://images.pexels.com/photos/301391/pexels-photo-301391.jpeg?auto=compress&cs=tinysrgb&w=600" class="bg" alt="Background">
 <q-page class="flex flex-center q-row">
     <div class="bg-white card-email">
         <h4>Sejá bem vindo a equipe da <strong class="text-primary">StockUp</strong></h4>

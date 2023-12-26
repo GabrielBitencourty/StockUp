@@ -54,7 +54,7 @@
     </div>
     <q-page-sticky
       position="bottom-right"
-      :offset="[18, 18]"
+      :offset="[18, 28]"
     >
       <q-btn
         v-if="$q.platform.is.mobile"

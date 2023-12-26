@@ -1,10 +1,9 @@
 <template>
-<q-page>
-
+  <q-page>
   <div id="homeCard" class="q-gutter-xl flex">
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
+      <q-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLmmmdIRC5Jtiu1TBKKnBHxWGSvnsJijyXX9UBRXik1NawWRILholyg0zkrX7qYFCEiNo&usqp=CAU" />
 
       <q-card-section>
         <q-btn
@@ -17,23 +16,22 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Cafe Basilico
+            Moleton Masculino
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
-            250 ft
+            345 ft
           </div>
         </div>
 
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Italian, Cafe
+          $・75,00
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          Small size,
         </div>
       </q-card-section>
 
@@ -48,7 +46,7 @@
     </q-card>
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+      <q-img src="https://www.dhresource.com/webp/m/0x0/f2/albu/g22/M01/15/DD/rBVaE2KH4FmAGfY7AAHtwhmHTpk419.jpg" />
 
       <q-card-section>
         <q-btn
@@ -61,7 +59,7 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Hamburguer
+            Camisa
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
@@ -69,15 +67,14 @@
           </div>
         </div>
 
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Brazilian, Burguer
+          $・34,90
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          Small size.
         </div>
       </q-card-section>
 
@@ -92,7 +89,7 @@
     </q-card>
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://images.pexels.com/photos/3915915/pexels-photo-3915915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+      <q-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVeGINimhfSFdAUSxd2CK_4HlHxrdMKg7eisuS2sBUtr0rCM8Z28yBtCyACWfhkyTtbsg&usqp=CAU" />
 
       <q-card-section>
         <q-btn
@@ -105,23 +102,22 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Hamburguer X
+            Calça de Moleton
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
-            250 ft
+            340 ft
           </div>
         </div>
 
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Italian, Burguer
+          $・46,70
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          Small size
         </div>
       </q-card-section>
 
@@ -136,7 +132,7 @@
     </q-card>
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://images.pexels.com/photos/845811/pexels-photo-845811.jpeg?auto=compress&cs=tinysrgb&w=600" />
+      <q-img src="https://images-americanas.b2w.io/produtos/2057485416/imagens/calca-moletom-masculina-jogger-slim-fit-basica-lisa/2057485521_1_large.jpg" />
 
       <q-card-section>
         <q-btn
@@ -149,23 +145,21 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Pizza
+            Calça masculina
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
             250 ft
           </div>
         </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Italian, Cafe
+          $・27,90
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          Small size
         </div>
       </q-card-section>
 
@@ -180,7 +174,7 @@
     </q-card>
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=600" />
+      <q-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSychHau83eTJMmWh9yj_eIwVlEjj29qQct_Q&usqp=CAU" />
 
       <q-card-section>
         <q-btn
@@ -193,7 +187,7 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Hamburguer c/Fritas
+            Moleton masculino
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
@@ -201,15 +195,14 @@
           </div>
         </div>
 
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Italian, Cafe
+          $・75,90
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          Small size
         </div>
       </q-card-section>
 
@@ -224,7 +217,7 @@
     </q-card>
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://images.pexels.com/photos/3742373/pexels-photo-3742373.jpeg?auto=compress&cs=tinysrgb&w=600" />
+      <q-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgM3m_hakf5fyw1wIesktqHZQYC12ln0Ywjw&usqp=CAU" />
 
       <q-card-section>
         <q-btn
@@ -237,23 +230,21 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Hamburguer Xl
+            Moleton masculino
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
             250 ft
           </div>
         </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Italian, Cafe
+          $・35,90
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          Small size
         </div>
       </q-card-section>
 
@@ -268,7 +259,7 @@
     </q-card>
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://images.pexels.com/photos/3738762/pexels-photo-3738762.jpeg?auto=compress&cs=tinysrgb&w=600" />
+      <q-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmCFMb2x2zTm7ej6TLYeobCeSm6K_ZEOQnHQ&usqp=CAU" />
 
       <q-card-section>
         <q-btn
@@ -281,7 +272,7 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Cheedar Burguer
+           Kit promoção
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
@@ -289,15 +280,14 @@
           </div>
         </div>
 
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Italian, Cafe
+          $・32,90
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          Small size
         </div>
       </q-card-section>
 
@@ -312,7 +302,7 @@
     </q-card>
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://images.pexels.com/photos/1893566/pexels-photo-1893566.jpeg?auto=compress&cs=tinysrgb&w=600" />
+      <q-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh5TqIhwksxQuSD-1vxssmkp-YmYuRQJKJAg&usqp=CAU" />
 
       <q-card-section>
         <q-btn
@@ -325,7 +315,7 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Ice Cream
+           Moleton masculino
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
@@ -333,22 +323,21 @@
           </div>
         </div>
 
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Italian, Cafe
+          $・25,90
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          Small size
         </div>
       </q-card-section>
 
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="add" />
+        <q-btn flat round icon="event" />
         <q-btn flat color="primary">
           Add to cart
         </q-btn>

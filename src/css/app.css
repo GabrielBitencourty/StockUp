@@ -94,6 +94,12 @@
     width: 50vw;
     box-shadow: 10px 12px 10px #868686;
 }
+.container2{
+    border: 1px solid #ccc;
+    padding: 1rem 2rem;
+    width: 70vw;
+    box-shadow: 10px 12px 10px #868686;
+}
 .my-card{
     width: 20%;
     border: 1px solid #000;
@@ -107,7 +113,6 @@
 .card-img{
     height: 42%;
 }
-
 
 
 

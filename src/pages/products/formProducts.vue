@@ -1,23 +1,27 @@
 <template>
   <q-page padding class="flex flex-center">
 
-    <div class="container">
+    <div class="container2">
       <q-form class="col-md-7 col-xs-12 col-sm-12" @submit.prevent="handleSubmit">
         <div>
-          <h5>Adicionar Nova Categoria</h5>
+          <h5>Adicionar Novo Produto</h5>
         </div>
 
         <q-input
-          label="Nome da Categoria"
+          label="Nome da Produto"
           lazy-rules
           v-model="form.name"
           :rules="[val => (val && val.length > 0) || 'Digite um nome valido']"
         >
-        <template v-slot:prepend>
-          <q-icon name="mdi-book-plus-multiple" color="primary"/>
-        </template>
-
+          <template v-slot:prepend>
+            <q-icon name="mdi-book-plus-multiple" color="primary"/>
+          </template>
         </q-input>
+
+        <q-editor
+          v-model="form.description"
+          min-height="5rem"
+        />
 
         <div class="flex flex-center q-pt-xl q-gutter-x-xl">
           <q-btn
@@ -34,7 +38,7 @@
             no-caps
             flat
             class="bg-secondary text-white"
-            :to="{ name: 'category' }"
+            :to="{ name: 'product' }"
           />
         </div>
 
@@ -51,10 +55,10 @@ import useApi from 'src/composables/useApi'
 import useNotify from 'src/composables/useNotify'
 
 export default defineComponent({
-  name: 'PageCategory',
+  name: 'PageFormProduct',
 
   setup () {
-    const table = 'category'
+    const table = 'products'
     const router = useRouter()
     const route = useRoute()
     const { post, getById, update } = useApi()
@@ -62,14 +66,14 @@ export default defineComponent({
 
     const isUpdate = computed(() => route.params.id)
 
-    let category = {}
+    let products = {}
     const form = ref({
       name: ''
     })
 
     onMounted(() => {
       if (isUpdate.value) {
-        handleGetCategory(isUpdate.value)
+        handleGetProduct(isUpdate.value)
       }
     })
 
@@ -82,18 +86,18 @@ export default defineComponent({
           notifySuccess('Alterações salvas com sucesso!')
         } else {
           await post(table, form.value)
-          notifySuccess('Categoria salva com sucesso')
+          notifySuccess('Produto salvo com sucesso')
         }
-        router.push({ name: 'category' })
+        router.push({ name: 'products' })
       } catch (error) {
         notifyError(error.message)
       }
     }
 
-    const handleGetCategory = async (id) => {
+    const handleGetProduct = async (id) => {
       try {
-        category = await getById(table, id)
-        form.value = category
+        products = await getById(table, id)
+        form.value = products
       } catch (error) {
         notifyError(error.message)
       }

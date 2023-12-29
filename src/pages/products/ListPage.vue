@@ -21,7 +21,7 @@
             no-caps
             icon="mdi-plus"
             color="secondary"
-            :to="{ name: 'form-category' }"
+            :to="{ name: 'form-product' }"
           />
         </template>
 

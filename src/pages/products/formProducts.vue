@@ -7,16 +7,64 @@
           <h5>Adicionar Novo Produto</h5>
         </div>
 
-        <q-input
-          label="Nome da Produto"
-          lazy-rules
-          v-model="form.name"
-          :rules="[val => (val && val.length > 0) || 'Digite um nome valido']"
-        >
-          <template v-slot:prepend>
-            <q-icon name="mdi-book-plus-multiple" color="primary"/>
-          </template>
-        </q-input>
+        <div class="flex cardInputs">
+
+          <q-input
+            label="Nome da Produto"
+            class="inputValue"
+            lazy-rules
+            v-model="form.name"
+            :rules="[val => (val && val.length > 0) || 'Digite um nome valido']"
+          >
+            <template v-slot:prepend>
+              <q-icon name="mdi-badge-account-horizontal-outline" color="primary"/>
+            </template>
+          </q-input>
+
+          <q-input
+            label="Quantidade"
+            lazy-rules
+            class="inputValue"
+            v-model="form.amount"
+            :rules="[val => !!val || 'Digite um valor valido']"
+            type="number"
+          >
+            <template v-slot:prepend>
+              <q-icon name="mdi-database" color="primary"/>
+            </template>
+          </q-input>
+
+          <q-input
+            label="Preço"
+            lazy-rules
+            v-model="form.price"
+            class="inputValue"
+            :rules="[val => !!val || 'Digite um valor valido']"
+            type="number"
+            prefix="R$"
+          >
+            <template v-slot:prepend>
+              <q-icon name="mdi-piggy-bank" color="primary"/>
+            </template>
+          </q-input>
+
+          <q-select
+            class="inputValue q-pb-xl"
+            v-model="form.category_id"
+            :options="optionsCategory"
+            label="Categoria"
+            option-value="id"
+            option-label="name"
+            map-options
+            emit-value
+            :rules="[val => !!val || 'Selecione uma categoria']"
+          >
+            <template v-slot:prepend>
+              <q-icon name="mdi-format-list-bulleted" color="primary"/>
+            </template>
+          </q-select>
+
+        </div>
 
         <q-editor
           v-model="form.description"
@@ -61,21 +109,31 @@ export default defineComponent({
     const table = 'products'
     const router = useRouter()
     const route = useRoute()
-    const { post, getById, update } = useApi()
+    const { post, getById, update, list } = useApi()
     const { notifyError, notifySuccess } = useNotify()
 
     const isUpdate = computed(() => route.params.id)
 
     let products = {}
+    const optionsCategory = ref([])
     const form = ref({
-      name: ''
+      name: '',
+      amount: 0,
+      price: 0,
+      description: '',
+      category_id: ''
     })
 
     onMounted(() => {
+      handleListCategories()
       if (isUpdate.value) {
         handleGetProduct(isUpdate.value)
       }
     })
+
+    const handleListCategories = async () => {
+      optionsCategory.value = await list('category')
+    }
 
     const handleSubmit = async () => {
       try {
@@ -106,7 +164,8 @@ export default defineComponent({
     return {
       handleSubmit,
       form,
-      isUpdate
+      isUpdate,
+      optionsCategory
     }
   }
 })

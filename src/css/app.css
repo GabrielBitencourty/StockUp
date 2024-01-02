@@ -97,7 +97,7 @@
 .container2{
     border: 1px solid #ccc;
     padding: 1rem 2rem;
-    width: 70vw;
+    width: 80vw;
     box-shadow: 10px 12px 10px #868686;
 }
 .my-card{
@@ -113,8 +113,14 @@
 .card-img{
     height: 42%;
 }
-
-
+.cardInputs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.inputValue{
+    width: 30%;
+}
 
 
 
@@ -157,5 +163,8 @@
     }
     .my-card{
         width: 90vw;
+    }
+    .container2{
+        width: 100%;
     }
 }

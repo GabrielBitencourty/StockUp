@@ -99,20 +99,20 @@ export default defineComponent({
       }
     }
 
-    const handleEdit = (category) => {
-      router.push({ name: 'form-product', params: { id: category.id } })
+    const handleEdit = (products) => {
+      router.push({ name: 'form-product', params: { id: products.id } })
     }
 
-    const handleRemove = async (category) => {
+    const handleRemove = async (products) => {
       try {
         $q.dialog({
           title: 'Antenção',
-          message: `Deseja excluir a categoria ${category.name}?`,
+          message: `Deseja realmente excluir o produto ${products.name}?`,
           cancel: true,
           persistent: true
         }).onOk(async () => {
-          await remove(table, category.id)
-          notifySuccess('Categoria excluida com sucesso')
+          await remove(table, products.id)
+          notifySuccess('Produto excluido com sucesso')
           handleListProducts()
         })
       } catch (error) {

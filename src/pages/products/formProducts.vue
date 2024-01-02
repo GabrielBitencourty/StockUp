@@ -127,7 +127,7 @@ export default defineComponent({
     onMounted(() => {
       handleListCategories()
       if (isUpdate.value) {
-        handleGetProduct(isUpdate.value)
+        handleGetProducts(isUpdate.value)
       }
     })
 
@@ -150,7 +150,7 @@ export default defineComponent({
       }
     }
 
-    const handleGetProduct = async (id) => {
+    const handleGetProducts = async (id) => {
       try {
         products = await getById(table, id)
         form.value = products

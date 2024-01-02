@@ -118,9 +118,9 @@ export default defineComponent({
     const optionsCategory = ref([])
     const form = ref({
       name: '',
+      description: '',
       amount: 0,
       price: 0,
-      description: '',
       category_id: ''
     })
 
@@ -138,15 +138,13 @@ export default defineComponent({
     const handleSubmit = async () => {
       try {
         if (isUpdate.value) {
-          await update(table, {
-            ...form.value
-          })
+          await update(form.value)
           notifySuccess('Alterações salvas com sucesso!')
         } else {
           await post(table, form.value)
           notifySuccess('Produto salvo com sucesso')
         }
-        router.push({ name: 'products' })
+        router.push({ name: 'product' })
       } catch (error) {
         notifyError(error.message)
       }

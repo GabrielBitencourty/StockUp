@@ -154,7 +154,9 @@ export default defineComponent({
           form.value.img_url = imgUrl
         }
         if (isUpdate.value) {
-          await update(form.value)
+          await update(table, {
+            ...form.value
+          })
           notifySuccess('Alterações salvas com sucesso!')
         } else {
           await post(table, form.value)

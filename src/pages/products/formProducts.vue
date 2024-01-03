@@ -12,6 +12,7 @@
           <q-input
             label="Nome da Produto"
             class="inputValue"
+            accept="image/*"
             lazy-rules
             v-model="form.name"
             :rules="[val => (val && val.length > 0) || 'Digite um nome valido']"
@@ -64,6 +65,14 @@
             </template>
           </q-select>
 
+         <q-input
+            label="Imagen do produto"
+            class="inputValue"
+            stack-label
+            type="file"
+            v-model="img"
+         />
+
         </div>
 
         <q-editor
@@ -109,7 +118,7 @@ export default defineComponent({
     const table = 'products'
     const router = useRouter()
     const route = useRoute()
-    const { post, getById, update, list } = useApi()
+    const { post, getById, update, list, uploadImg } = useApi()
     const { notifyError, notifySuccess } = useNotify()
 
     const isUpdate = computed(() => route.params.id)
@@ -121,8 +130,11 @@ export default defineComponent({
       description: '',
       amount: 0,
       price: 0,
-      category_id: ''
+      category_id: '',
+      img_url: ''
     })
+
+    const img = ref([])
 
     onMounted(() => {
       handleListCategories()
@@ -137,6 +149,10 @@ export default defineComponent({
 
     const handleSubmit = async () => {
       try {
+        if (img.value.length > 0) {
+          const imgUrl = await uploadImg(img.value[0], 'products')
+          form.value.img_url = imgUrl
+        }
         if (isUpdate.value) {
           await update(form.value)
           notifySuccess('Alterações salvas com sucesso!')
@@ -163,7 +179,8 @@ export default defineComponent({
       handleSubmit,
       form,
       isUpdate,
-      optionsCategory
+      optionsCategory,
+      img
     }
   }
 })

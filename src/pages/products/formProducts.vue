@@ -71,6 +71,7 @@
             stack-label
             type="file"
             v-model="img"
+            accept="image/*"
          />
 
         </div>

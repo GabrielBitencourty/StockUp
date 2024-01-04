@@ -9,7 +9,7 @@
         <q-btn
           fab
           color="primary"
-          icon="place"
+          icon="mdi-cart-variant"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -38,7 +38,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="mdi-heart" />
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -52,7 +52,7 @@
         <q-btn
           fab
           color="primary"
-          icon="place"
+          icon="mdi-cart-variant"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -81,7 +81,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="mdi-heart" />
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -95,7 +95,7 @@
         <q-btn
           fab
           color="primary"
-          icon="place"
+          icon="mdi-cart-variant"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -124,7 +124,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="mdi-heart" />
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -138,7 +138,7 @@
         <q-btn
           fab
           color="primary"
-          icon="place"
+          icon="mdi-cart-variant"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -166,7 +166,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="mdi-heart" />
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -180,7 +180,7 @@
         <q-btn
           fab
           color="primary"
-          icon="place"
+          icon="mdi-cart-variant"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -209,7 +209,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="mdi-heart" />
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -223,7 +223,7 @@
         <q-btn
           fab
           color="primary"
-          icon="place"
+          icon="mdi-cart-variant"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -251,7 +251,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="mdi-heart" />
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -265,7 +265,7 @@
         <q-btn
           fab
           color="primary"
-          icon="place"
+          icon="mdi-cart-variant"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -294,7 +294,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="mdi-heart" />
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -308,7 +308,7 @@
         <q-btn
           fab
           color="primary"
-          icon="place"
+          icon="mdi-cart-variant"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -337,9 +337,9 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="event" />
+        <q-btn flat round icon="mdi-heart" />
         <q-btn flat color="primary">
-          Add to cart
+          Reserve
         </q-btn>
       </q-card-actions>
     </q-card>

@@ -58,7 +58,7 @@ export default function useApi () {
 
   const uploadImg = async (file, storage) => {
     const fileName = uuidv4()
-    const { error } = supabase
+    const { error } = await supabase
       .storage
       .from(storage)
       .upload(fileName, file, {

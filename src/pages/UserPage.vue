@@ -38,7 +38,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="mdi-heart" />
+        <q-btn flat round icon="mdi-heart" color="negative"/>
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -81,7 +81,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="mdi-heart" />
+        <q-btn flat round icon="mdi-heart" color="negative"/>
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -124,7 +124,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="mdi-heart" />
+        <q-btn flat round icon="mdi-heart" color="negative"/>
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -166,7 +166,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="mdi-heart" />
+        <q-btn flat round icon="mdi-heart" color="negative"/>
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -209,7 +209,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="mdi-heart" />
+        <q-btn flat round icon="mdi-heart" color="negative"/>
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -251,7 +251,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="mdi-heart" />
+        <q-btn flat round icon="mdi-heart" color="negative"/>
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -294,7 +294,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="mdi-heart" />
+        <q-btn flat round icon="mdi-heart" color="negative"/>
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -337,7 +337,7 @@
       <q-separator />
 
       <q-card-actions>
-        <q-btn flat round icon="mdi-heart" />
+        <q-btn flat round icon="mdi-heart" color="negative"/>
         <q-btn flat color="primary">
           Reserve
         </q-btn>

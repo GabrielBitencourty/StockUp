@@ -65,12 +65,12 @@ export default function useApi () {
         cacheControl: '3600',
         upsert: false
       })
-    const publicUrl = await getUrlPublic(fileName, storage)
+    const publicUrl = await getPublicUrl(fileName, storage)
     if (error) throw error
     return publicUrl
   }
 
-  const getUrlPublic = async (fileName, storage) => {
+  const getPublicUrl = async (fileName, storage) => {
     const { publicURL, error } = supabase
       .storage
       .from(storage)
@@ -85,6 +85,7 @@ export default function useApi () {
     post,
     update,
     remove,
-    uploadImg
+    uploadImg,
+    getPublicUrl
   }
 }

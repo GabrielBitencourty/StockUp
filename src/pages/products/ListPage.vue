@@ -25,7 +25,7 @@
           />
         </template>
 
-        <template v-slot:body-cell-img_url="props">
+        <template v-slot:body-cell-img_url="props" >
           <q-td :props="props">
             <q-avatar v-if="props.row.img_url">
               <img :src="props.row.img_url">

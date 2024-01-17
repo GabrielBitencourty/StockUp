@@ -12,7 +12,6 @@
           <q-input
             label="Nome da Produto"
             class="inputValue"
-            accept="image/*"
             lazy-rules
             v-model="form.name"
             :rules="[val => (val && val.length > 0) || 'Digite um nome valido']"

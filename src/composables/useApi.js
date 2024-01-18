@@ -56,27 +56,27 @@ export default function useApi () {
     return data
   }
 
-  const uploadImg = async (file, storage) => {
+  const uploadImg = async (file) => {
     const fileName = uuidv4()
     const { error } = await supabase
       .storage
-      .from(storage)
+      .from('products')
       .upload(fileName, file, {
         cacheControl: '3600',
         upsert: false
       })
-    const publicUrl = await getPublicUrl(fileName, storage)
+    const publicUrl = (await getUrlPublic(fileName)).publicUrl
     if (error) throw error
     return publicUrl
   }
 
-  const getPublicUrl = async (fileName, storage) => {
-    const { publicURL, error } = supabase
+  const getUrlPublic = async (fileName, publicURL) => {
+    const { data, error } = supabase
       .storage
-      .from(storage)
-      .getPublicUrl(fileName)
+      .from('products')
+      .getPublicUrl(fileName, publicURL)
     if (error) throw error
-    return publicURL
+    return data
   }
 
   return {
@@ -85,7 +85,6 @@ export default function useApi () {
     post,
     update,
     remove,
-    uploadImg,
-    getPublicUrl
+    uploadImg
   }
 }

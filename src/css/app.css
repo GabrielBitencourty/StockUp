@@ -85,9 +85,6 @@
 .back{
     display: none;
 }
-.table{
-    border: 1px solid #ccc;
-}
 .container{
     border: 1px solid #ccc;
     padding: 1rem 2rem;
@@ -121,9 +118,9 @@
 .inputValue{
     width: 30%;
 }
-
-
-
+.search{
+    width: 40%;
+}
 
 
 
@@ -169,5 +166,8 @@
     }
     .inputValue{
         width: 100%;
+    }
+    .cards{
+        margin: 1rem 0rem;
     }
 }

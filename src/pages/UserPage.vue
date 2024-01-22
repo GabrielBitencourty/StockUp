@@ -3,7 +3,7 @@
   <div id="homeCard" class="q-gutter-xl flex">
 
     <q-card class="my-card" flat bordered>
-      <q-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLmmmdIRC5Jtiu1TBKKnBHxWGSvnsJijyXX9UBRXik1NawWRILholyg0zkrX7qYFCEiNo&usqp=CAU" />
+    <q-img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPWcecmLFTRljaH0zHdgCjwG7J1n7KE4AfeA&usqp=CAU" />
 
       <q-card-section>
         <q-btn
@@ -350,17 +350,26 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import useAuth from 'src/composables/useAuth'
+import useApi from 'src/composables/useApi'
 
 export default defineComponent({
   name: 'UserPage',
 
   setup () {
     const { user } = useAuth()
+    const table = 'products'
+    const products = ref([])
+    const { listPublic } = useApi()
+
+    const product = async () => {
+      products.value = await listPublic(table)
+    }
 
     return {
-      user
+      user,
+      product
     }
   }
 })

@@ -13,6 +13,19 @@
           <span class="text-h6">
             Products
           </span>
+
+          <q-btn
+            label="My Store"
+            dense
+            size="sm"
+            rounded
+            outline
+            class="q-ml-sm"
+            icon="mdi-store"
+            color="primary"
+            @click="handleGoToStore"
+          />
+
           <q-space />
           <q-btn
             v-if="$q.platform.is.desktop"
@@ -75,6 +88,7 @@ import useNotify from 'src/composables/useNotify'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
 import { columnsProducts } from './table'
+import useAuth from 'src/composables/useAuth'
 
 export default defineComponent({
   name: 'pageProductsList',
@@ -85,14 +99,15 @@ export default defineComponent({
     const $q = useQuasar()
     const table = 'products'
 
-    const { list, remove } = useApi()
+    const { listPublic, remove } = useApi()
+    const { user } = useAuth()
     const { notifyError, notifySuccess } = useNotify()
     const router = useRouter()
 
     const handleListProducts = async () => {
       try {
         loading.value = true
-        products.value = await list(table)
+        products.value = await listPublic(table, user.value.id)
         loading.value = false
       } catch (error) {
         notifyError(error.message)
@@ -120,6 +135,11 @@ export default defineComponent({
       }
     }
 
+    const handleGoToStore = () => {
+      const idUser = user.value.id
+      router.push({ name: 'products', params: { id: idUser } })
+    }
+
     onMounted(() => {
       handleListProducts()
     })
@@ -129,7 +149,8 @@ export default defineComponent({
       products,
       loading,
       handleEdit,
-      handleRemove
+      handleRemove,
+      handleGoToStore
     }
   }
 })

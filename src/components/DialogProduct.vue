@@ -44,7 +44,7 @@
           icon="mdi-whatsapp"
           color="green-7"
           no-caps
-          @click="HandleSendWpp"
+          @click="handleSendWpp"
         />
 
       </q-card-actions>
@@ -56,6 +56,7 @@
 <script>
 import { defineComponent } from 'vue'
 import { formatCurrency } from 'src/utils/format'
+import { openURL } from 'quasar'
 
 export default defineComponent({
   name: 'DialogProducts',
@@ -70,12 +71,16 @@ export default defineComponent({
   },
 
   setup (props, { emit }) {
+    const phone = '31971224263'
+    const msg = 'Olá, gostei desse produto!: '
+
     const handleClose = () => {
       emit('hideDialog')
     }
 
     const handleSendWpp = () => {
-      alert('enviado')
+      const link = encodeURI(`https://api.whatsapp.com/send?phone=55${phone}&text=${msg} - ${props.product.name} - ${formatCurrency(props.product.price)}`)
+      openURL(link)
     }
 
     return {

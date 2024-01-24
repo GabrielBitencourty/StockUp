@@ -170,4 +170,8 @@
     .cards{
         margin: 1rem 0rem;
     }
+    .search{
+        padding-top: 1rem;
+        width: 100%;
+    }
 }

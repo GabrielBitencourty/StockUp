@@ -1,12 +1,12 @@
 <template>
-  <q-page padding class="q-pt-xl">
+  <q-page padding>
     <div class="row">
       <q-table
        grid
        :rows="products"
        :columns="columnsProducts"
        row-key="id"
-       class="col-12 q-gutter-xl"
+       class="col-12"
        :loading="loading"
        :filter="filter"
       >
@@ -31,8 +31,8 @@
         </template>
 
         <template v-slot:item="props">
-         <div class="q-pa-xl col-xs-12 col-sm-6 col-md-4">
-          <q-card class="q-mt-xl cursor-pointer" v-ripple:primary @click="handleShowDetails(props.row)">
+         <div class="q-pa-sm col-xs-12 col-sm-6 col-md-4">
+          <q-card class="cursor-pointer" v-ripple:primary @click="handleShowDetails(props.row)">
             <q-img :src="props.row.img_url" :ratio="4/3" />
             <q-card-section class="text-center">
               <div class="text-h6">{{ props.row.name }}</div>

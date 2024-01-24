@@ -77,6 +77,11 @@ const linksList = [
     title: 'Products',
     icon: 'mdi-archive',
     routeName: 'product'
+  },
+  {
+    title: 'config',
+    icon: 'mdi-cog',
+    routeName: 'form-config'
   }
 ]
 

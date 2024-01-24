@@ -40,7 +40,7 @@
             v-model="form.price"
             class="inputValue"
             :rules="[val => !!val || 'Digite um valor valido']"
-            type="number"
+            type="float"
             prefix="R$"
           >
             <template v-slot:prepend>

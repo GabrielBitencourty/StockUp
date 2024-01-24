@@ -1,14 +1,16 @@
 <template>
   <q-page padding>
     <div class="row">
+
       <q-table
-       grid
-       :rows="products"
-       :columns="columnsProducts"
-       row-key="id"
-       class="col-12"
-       :loading="loading"
-       :filter="filter"
+        grid
+        class="my-sticky-virtscroll-table col-12"
+        :rows="products"
+        :columns="columnsProducts"
+        row-key="id"
+        :loading="loading"
+        :filter="filter"
+        :rows-per-page-options="[0]"
       >
 
         <template v-slot:top>
@@ -31,18 +33,55 @@
         </template>
 
         <template v-slot:item="props">
-         <div class="q-pa-sm col-xs-12 col-sm-6 col-md-4">
-          <q-card class="cursor-pointer" v-ripple:primary @click="handleShowDetails(props.row)">
+         <div class="q-pa-md col-xs-10 col-sm-6 col-md-3">
+          <q-card class="cursor-pointer my-card" v-ripple:primary>
             <q-img :src="props.row.img_url" :ratio="4/3" />
-            <q-card-section class="text-center">
-              <div class="text-h6">{{ props.row.name }}</div>
-              <div class="text-subtitle2">{{ formatCurrency(props.row.price) }}</div>
+            <q-card-section>
+              <q-btn
+                fab
+                @click="handleShowDetails(props.row)"
+                color="primary"
+                icon="mdi-whatsapp"
+                class="absolute"
+                style="top: 0; right: 12px; transform: translateY(-50%);"
+              />
+
+              <div class="row no-wrap items-center">
+                <div class="col text-h6 ellipsis">
+                  {{ props.row.name }}
+                </div>
+                <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
+                  <q-icon name="mdi-store" />
+                    {{ props.row.amount }}
+                </div>
+              </div>
             </q-card-section>
+
+            <q-card-section class="q-pt-none">
+              <div class="text-subtitle1 text-skyBlue">
+                {{ formatCurrency(props.row.price) }}
+              </div>
+              <div class="text-caption text-grey">
+                {{ props.row.description }}
+              </div>
+            </q-card-section>
+
+            <q-card-actions class="flex flex-center">
+              <q-btn
+                label="Adicionar a Sacola"
+                class="bg-primary q-mb-md text-white"
+                rounded
+                no-caps
+                icon="mdi-shopping"
+              >
+              </q-btn>
+            </q-card-actions>
+
           </q-card>
         </div>
       </template>
 
-       </q-table>
+      </q-table>
     </div>
     <dialog-product
       :show="showDialogDetails"

@@ -9,7 +9,7 @@
         <q-btn
           fab
           color="primary"
-          icon="mdi-cart-variant"
+          icon="mdi-whatsapp"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -34,15 +34,6 @@
           Small size,
         </div>
       </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="mdi-heart" color="negative"/>
-        <q-btn flat color="primary">
-          Reserve
-        </q-btn>
-      </q-card-actions>
     </q-card>
 
     <q-card class="my-card" flat bordered>
@@ -52,7 +43,7 @@
         <q-btn
           fab
           color="primary"
-          icon="mdi-cart-variant"
+          icon="mdi-whatsapp"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -77,15 +68,6 @@
           Small size.
         </div>
       </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="mdi-heart" color="negative"/>
-        <q-btn flat color="primary">
-          Reserve
-        </q-btn>
-      </q-card-actions>
     </q-card>
 
     <q-card class="my-card" flat bordered>
@@ -95,7 +77,7 @@
         <q-btn
           fab
           color="primary"
-          icon="mdi-cart-variant"
+          icon="mdi-whatsapp"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -120,15 +102,6 @@
           Small size
         </div>
       </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="mdi-heart" color="negative"/>
-        <q-btn flat color="primary">
-          Reserve
-        </q-btn>
-      </q-card-actions>
     </q-card>
 
     <q-card class="my-card" flat bordered>
@@ -138,7 +111,7 @@
         <q-btn
           fab
           color="primary"
-          icon="mdi-cart-variant"
+          icon="mdi-whatsapp"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -162,15 +135,6 @@
           Small size
         </div>
       </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="mdi-heart" color="negative"/>
-        <q-btn flat color="primary">
-          Reserve
-        </q-btn>
-      </q-card-actions>
     </q-card>
 
     <q-card class="my-card" flat bordered>
@@ -180,7 +144,7 @@
         <q-btn
           fab
           color="primary"
-          icon="mdi-cart-variant"
+          icon="mdi-whatsapp"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -205,15 +169,6 @@
           Small size
         </div>
       </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="mdi-heart" color="negative"/>
-        <q-btn flat color="primary">
-          Reserve
-        </q-btn>
-      </q-card-actions>
     </q-card>
 
     <q-card class="my-card" flat bordered>
@@ -223,7 +178,7 @@
         <q-btn
           fab
           color="primary"
-          icon="mdi-cart-variant"
+          icon="mdi-whatsapp"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -247,15 +202,6 @@
           Small size
         </div>
       </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="mdi-heart" color="negative"/>
-        <q-btn flat color="primary">
-          Reserve
-        </q-btn>
-      </q-card-actions>
     </q-card>
 
     <q-card class="my-card" flat bordered>
@@ -265,7 +211,7 @@
         <q-btn
           fab
           color="primary"
-          icon="mdi-cart-variant"
+          icon="mdi-whatsapp"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -290,15 +236,6 @@
           Small size
         </div>
       </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="mdi-heart" color="negative"/>
-        <q-btn flat color="primary">
-          Reserve
-        </q-btn>
-      </q-card-actions>
     </q-card>
 
     <q-card class="my-card" flat bordered>
@@ -308,7 +245,7 @@
         <q-btn
           fab
           color="primary"
-          icon="mdi-cart-variant"
+          icon="mdi-whatsapp"
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
@@ -333,15 +270,6 @@
           Small size
         </div>
       </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="mdi-heart" color="negative"/>
-        <q-btn flat color="primary">
-          Reserve
-        </q-btn>
-      </q-card-actions>
     </q-card>
 
   </div>

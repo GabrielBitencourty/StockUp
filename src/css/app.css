@@ -1,14 +1,7 @@
 /*Scroll bar*/
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 0px;
 }
-::-webkit-scrollbar-thumb {
-    background-color: #006eff;
-}
-
-
-
-
 
 /* app global css */
 
@@ -98,8 +91,8 @@
     box-shadow: 10px 12px 10px #868686;
 }
 .my-card{
-    width: 20%;
     border: 1px solid #ccc;
+    height: auto;
 }
 #homeCard{
     padding: 1rem 0rem;

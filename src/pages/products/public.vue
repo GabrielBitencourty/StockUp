@@ -116,7 +116,7 @@
 
         <template v-slot:top>
           <span class="text-h6">
-            Catalogo de Produtos
+            Mais Vendidos da Semana
           </span>
           <q-space />
           <q-input

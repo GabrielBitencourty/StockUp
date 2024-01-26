@@ -38,7 +38,7 @@
       <q-btn
         label="Cupom de Desconto"
         rounded
-        color="red"
+        color="yellow"
         no-caps
         class="q-ma-md"
         padding

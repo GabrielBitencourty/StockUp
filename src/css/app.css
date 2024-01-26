@@ -118,8 +118,11 @@
     margin: 1rem;
     width: 98%;
 }
-
-
+.myCard{
+    margin-top: 2rem;
+    width: 30%;
+    height: 150px;
+}
 
 
 
@@ -168,5 +171,12 @@
     .search{
         padding-top: 1rem;
         width: 100%;
+    }
+    .myCard{
+        width: 90%;
+        margin-top: 2rem;
+    }
+    .cards{
+        justify-content: center !important;
     }
 }

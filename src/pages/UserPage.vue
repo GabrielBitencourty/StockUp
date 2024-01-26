@@ -36,6 +36,16 @@
       />
 
       <q-btn
+        label="Cupom de Desconto"
+        rounded
+        color="red"
+        no-caps
+        class="q-ma-md"
+        padding
+        icon="mdi-tag-off"
+      />
+
+      <q-btn
         label="Configurações da Loja"
         rounded
         color="orange"

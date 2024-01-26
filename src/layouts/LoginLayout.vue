@@ -15,5 +15,22 @@
 </template>
 
 <script>
+import { defineComponent, onMounted } from 'vue'
+import useApi from 'src/composables/useApi'
 
+export default defineComponent({
+  name: 'LoginDefault',
+
+  setup () {
+    const { getBrand } = useApi()
+
+    onMounted(() => {
+      getBrand()
+    })
+
+    return {
+
+    }
+  }
+})
 </script>

@@ -55,11 +55,12 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 import useAuth from 'src/composables/useAuth'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
+import useApi from 'src/composables/useApi'
 import useNotify from 'src/composables/useNotify'
 
 const linksList = [
@@ -94,14 +95,15 @@ export default defineComponent({
 
   setup () {
     const leftDrawerOpen = ref(false)
-
     const $q = useQuasar()
-
     const { notifyInfo } = useNotify()
-
     const router = useRouter()
-
     const { logout } = useAuth()
+    const { getBrand } = useApi()
+
+    onMounted(() => {
+      getBrand()
+    })
 
     const handleLogout = async () => {
       $q.dialog({

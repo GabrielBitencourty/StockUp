@@ -127,6 +127,7 @@
 import { defineComponent } from 'vue'
 import useAuth from 'src/composables/useAuth'
 import { useRouter } from 'vue-router'
+import { openURL } from 'quasar'
 
 export default defineComponent({
   name: 'UserPage',
@@ -137,7 +138,8 @@ export default defineComponent({
 
     const handleGoToStore = () => {
       const idUser = user.value.id
-      router.push({ name: 'products', params: { id: idUser } })
+      const link = router.resolve({ name: 'products', params: { id: idUser } })
+      openURL(window.origin + link.href)
     }
 
     return {

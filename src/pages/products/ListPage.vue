@@ -86,7 +86,7 @@ import { defineComponent, ref, onMounted } from 'vue'
 import useApi from 'src/composables/useApi'
 import useNotify from 'src/composables/useNotify'
 import { useRouter } from 'vue-router'
-import { useQuasar } from 'quasar'
+import { useQuasar, openURL } from 'quasar'
 import { columnsProducts } from './table'
 import useAuth from 'src/composables/useAuth'
 
@@ -137,7 +137,8 @@ export default defineComponent({
 
     const handleGoToStore = () => {
       const idUser = user.value.id
-      router.push({ name: 'products', params: { id: idUser } })
+      const link = router.resolve({ name: 'products', params: { id: idUser } })
+      openURL(window.origin + link.href)
     }
 
     onMounted(() => {

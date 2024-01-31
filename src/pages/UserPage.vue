@@ -53,7 +53,7 @@
         class="q-ma-md"
         padding
         icon="mdi-cog-outline"
-        :to="{ name: 'products' }"
+        :to="{ name: 'config' }"
       />
     </div>
 

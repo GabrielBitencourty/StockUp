@@ -40,6 +40,7 @@
         />
 
         <q-btn
+          v-if="brand.phone"
           label="Fazer Pedido"
           icon="mdi-whatsapp"
           color="green-7"
@@ -57,6 +58,7 @@
 import { defineComponent } from 'vue'
 import { formatCurrency } from 'src/utils/format'
 import { openURL } from 'quasar'
+import useApi from 'src/composables/useApi'
 
 export default defineComponent({
   name: 'DialogProducts',
@@ -71,22 +73,22 @@ export default defineComponent({
   },
 
   setup (props, { emit }) {
-    const phone = '31971224263'
-    const msg = 'Olá, gostei desse produto!: '
+    const { brand } = useApi()
 
     const handleClose = () => {
       emit('hideDialog')
     }
 
     const handleSendWpp = () => {
-      const link = encodeURI(`https://api.whatsapp.com/send?phone=55${phone}&text=${msg} - ${props.product.name} - ${formatCurrency(props.product.price)}`)
+      const link = encodeURI(`https://api.whatsapp.com/send?phone=55${brand.value.phone}&text=${brand.value.message} - ${props.product.name} - ${formatCurrency(props.product.price)}`)
       openURL(link)
     }
 
     return {
       formatCurrency,
       handleClose,
-      handleSendWpp
+      handleSendWpp,
+      brand
     }
   }
 })

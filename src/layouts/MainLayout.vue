@@ -15,8 +15,7 @@
         <q-toolbar-title class="logo">
           StockUp
         </q-toolbar-title>
-
-        <q-btn-dropdown flat color="white" icon="person">
+        <q-btn-dropdown flat icon="mdi-account">
           <q-list>
             <q-item clickable v-close-popup @click="handleLogout">
               <q-item-section>
@@ -82,7 +81,7 @@ const linksList = [
   {
     title: 'config',
     icon: 'mdi-cog',
-    routeName: 'form-config'
+    routeName: 'config'
   }
 ]
 

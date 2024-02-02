@@ -122,7 +122,7 @@
           <q-input
             v-model="filter"
             outlined
-            debounce="300"
+            debounce="500"
             dense
             placeholder="Search"
             class="q-mr-sm search"

@@ -1,5 +1,4 @@
 <template>
-  <SpeedInsights />
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
@@ -62,7 +61,6 @@ import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
 import useApi from 'src/composables/useApi'
 import useNotify from 'src/composables/useNotify'
-import { SpeedInsights } from "@vercel/speed-insights/vue"
 
 const linksList = [
   {
@@ -126,8 +124,7 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
 
-      handleLogout,
-      SpeedInsights
+      handleLogout
     }
   }
 })

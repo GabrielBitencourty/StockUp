@@ -5,6 +5,8 @@
       <q-btn label="Minha Loja" rounded color="blue-4" no-caps class="q-ma-md" padding icon="mdi-store"
         @click="handleGoToStore" />
 
+      <a href="#" @click="handleGoToStore">Link da LOja</a>
+
       <q-btn label="Novo Produto" rounded color="red" no-caps class="q-ma-md" padding icon="mdi-layers-plus"
         :to="{ name: 'form-product' }" />
 
